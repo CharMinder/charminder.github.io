@@ -1,4 +1,4 @@
-baseURL = "https://charminder.github.io"
+baseURL = "https://charminder.github.io/"
 languageCode = "en-us"
 theme = "raditian-free-hugo-theme"
 
