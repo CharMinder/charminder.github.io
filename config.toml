@@ -43,10 +43,6 @@ theme = "raditian-free-hugo-theme"
   URL = "#about"
   weight = 2
 
-  [[menu.footer]]
-  name = "Portfolio"
-  URL = "#portfolio"
-  weight = 3
 
   [[menu.footer]]
   name = "Contact"
