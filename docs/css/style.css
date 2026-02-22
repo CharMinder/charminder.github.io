@@ -382,6 +382,25 @@ body {
 .timeline-item.reveal:nth-child(6) { transition-delay: 0.30s; }
 .timeline-item.reveal:nth-child(7) { transition-delay: 0.36s; }
 
+/* Principle items stagger */
+.principle-item.reveal:nth-child(1) { transition-delay: 0.00s; }
+.principle-item.reveal:nth-child(2) { transition-delay: 0.06s; }
+.principle-item.reveal:nth-child(3) { transition-delay: 0.12s; }
+.principle-item.reveal:nth-child(4) { transition-delay: 0.18s; }
+.principle-item.reveal:nth-child(5) { transition-delay: 0.24s; }
+.principle-item.reveal:nth-child(6) { transition-delay: 0.30s; }
+.principle-item.reveal:nth-child(7) { transition-delay: 0.36s; }
+.principle-item.reveal:nth-child(8) { transition-delay: 0.42s; }
+
+/* Principle marker glow */
+.dark .principle-marker {
+  box-shadow: 0 0 6px rgba(0, 245, 212, 0.5);
+}
+
+.principle-marker {
+  box-shadow: 0 0 6px rgba(255, 110, 180, 0.3);
+}
+
 /* ============================================================
    Theme Toggle Animation
    ============================================================ */

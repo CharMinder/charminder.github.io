@@ -139,7 +139,7 @@
   // Side Navigation Tracking
   // --------------------------------------------------------
   var navDots = document.querySelectorAll('.nav-dot');
-  var sectionIds = ['top', 'about', 'timeline', 'contact'];
+  var sectionIds = ['top', 'about', 'principles', 'timeline', 'contact'];
 
   function updateNav() {
     var currentSection = '';
@@ -187,7 +187,8 @@
       entries.forEach(function (entry) {
         if (entry.isIntersecting) {
           entry.target.classList.add('visible');
-          revealObserver.unobserve(entry.target);
+        } else {
+          entry.target.classList.remove('visible');
         }
       });
     }, { threshold: 0.15 });
