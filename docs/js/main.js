@@ -187,7 +187,9 @@
       entries.forEach(function (entry) {
         if (entry.isIntersecting) {
           entry.target.classList.add('visible');
-        } else {
+        } else if (entry.boundingClientRect.top > 0) {
+          // Only hide if the element is below the viewport (not yet scrolled to).
+          // Elements above the viewport (already scrolled past) stay visible.
           entry.target.classList.remove('visible');
         }
       });
