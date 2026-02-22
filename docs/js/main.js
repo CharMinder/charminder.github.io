@@ -230,6 +230,8 @@
 
       if (itemTop <= threshold + 12) {
         item.classList.add('timeline-active');
+      } else {
+        item.classList.remove('timeline-active');
       }
     }
   }

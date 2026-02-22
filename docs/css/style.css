@@ -93,11 +93,11 @@ body {
 }
 
 .dark .timeline::before {
-  background: #1a1a2e;
+  background: transparent;
 }
 
 .timeline::before {
-  background: #e8e3de;
+  background: transparent;
 }
 
 /* Progress line (scroll-driven) */
