@@ -139,7 +139,7 @@
   // Side Navigation Tracking
   // --------------------------------------------------------
   var navDots = document.querySelectorAll('.nav-dot');
-  var sectionIds = ['top', 'timeline', 'contact'];
+  var sectionIds = ['top', 'about', 'timeline', 'contact'];
 
   function updateNav() {
     var currentSection = '';
@@ -174,6 +174,7 @@
     var docHeight = document.documentElement.scrollHeight - window.innerHeight;
     scrollRatio = docHeight > 0 ? Math.min(scrollTop / docHeight, 1) : 0;
     updateNav();
+    updateTimelineProgress();
   }
 
   // --------------------------------------------------------
@@ -198,6 +199,39 @@
     revealElements.forEach(function (el) {
       el.classList.add('visible');
     });
+  }
+
+  // --------------------------------------------------------
+  // Scroll-Driven Timeline Progress Line
+  // --------------------------------------------------------
+  var timeline = document.querySelector('.timeline');
+  var timelineProgress = document.querySelector('.timeline-progress');
+  var timelineItemsList = document.querySelectorAll('.timeline-item');
+
+  function updateTimelineProgress() {
+    if (!timeline || !timelineProgress) return;
+
+    var rect = timeline.getBoundingClientRect();
+    var timelineHeight = rect.height;
+
+    // The "scan line" sits at 50% of the viewport height
+    var triggerPoint = window.innerHeight * 0.5;
+    var progressPx = triggerPoint - rect.top;
+    var progress = progressPx / timelineHeight;
+    progress = Math.max(0, Math.min(1, progress));
+
+    timelineProgress.style.height = (progress * 100) + '%';
+
+    // Activate dots as the progress line reaches each item
+    for (var i = 0; i < timelineItemsList.length; i++) {
+      var item = timelineItemsList[i];
+      var itemTop = item.offsetTop;
+      var threshold = progress * timelineHeight;
+
+      if (itemTop <= threshold + 12) {
+        item.classList.add('timeline-active');
+      }
+    }
   }
 
   // --------------------------------------------------------
